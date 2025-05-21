@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)https://w3c.github.io/scholarly-html/#article -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Scholarly HTML</title>
+    <link rel="stylesheet" href="./Scholarly HTML_files/scholarly.min.css">
+    <script src="./Scholarly HTML_files/scholarly.min.js.download"></script>
+  </head>
+  <body prefix="schema: http://schema.org">
+    <header>
+      <div class="banner">
+        <img src="./Scholarly HTML_files/scholarly-html.svg" width="227" height="50" alt="Scholarly HTML logo">
+        <div class="status">Community Draft</div>
+      </div>
+      <h1>COMMUTR - Scholarly HTML</h1>
+    </header>
+    <!--
+      XXX
+      - check refs
+      - the math example has too much maths
+      - bring back some of the old style
+      - make semantics, validation, processing sub-sections of each structural element
+      - have a section before that for general constructs
+        - explain why use RDFa
+        - explain our patterns: RDFa, roles
+      - figure captions need to get set throughout
+      - dedication? see doc-dedication
+      - syntactic constraints (prefix)
+      - needs more sthenurines
+      - examples of everything
+      - some notes on using Semantic CSS
+      - needs more RDFa in the spec itself
+    -->
+    <div role="contentinfo">
+      <dl>
+        <dt>Autori</dt>
+        <dd>
+          Balan Gabriela
+          &amp;
+          Caplea Veronica
+          &amp;
+          Matei Camelia-Petrina 
+          &amp;
+          Onuț Daniela-Mihaela
+        </dd>
+        <dt>Licenta</dt>
+        <dd>
+          <a href="http://creativecommons.org/licenses/by/4.0/">CC-BY</a>
+        </dd>
+      </dl>
+    </div>
+    <section typeof="sa:Abstract" id="abstract" role="doc-abstract">
+      <h2>Abstract</h2>
+      <p>
+        COMMUTR este o aplicatie de divertisment destinata celor care fac naveta cu trenul in fiecare zi. Aplicatia aduce 
+        la un loc o varietate mare de categorii de continut: muzica, filme, podcasturi, carti si jocuri din care 
+        utilizatorul poate alege pentru a-si petrece timpul intr-un mod mai placut.
+      </p>
+    </section>
+    <section id="introduction" role="doc-introduction">
+      <!-- review? -->
+      <h2>Introducere</h2>
+      <section id="purpose">
+        <h3>Scop</h3>
+      <p>
+        Aplicatia COMMUTR, detaliata in acest document, isi propune sa ofere utilizatorului o experienta completa
+        in ceea ce priveste optiunile sale de divertisment, astfel incat sa transforme naveta spre serviciu/facultate/scoala
+        intr-o experienta multimedia personalizata.
+      </p>
+    </section>
+    <section id="intended-audience">
+      <h3>Publicul tinta</h3>
+      <p>
+        Aplicatia aceasta poate fi utilizata de catre orice persoana care obisnuieste sa calatoreasca cu trenul
+        indiferent de varsta, ocupatie sau preferinte personale (corporatisti, studenți, persoane pasionate
+        de calatorii). 
+      </p>
+    </section>
+    <section id="scope">
+      <h3>Viziunea</h3>
+      <p>
+        Viziunea COMMUTR este cea de a deveni un companion zilnic de drum mediu sau lung, care sa ofere un continut
+        relevant si sa fie un instrument care aduce la un loc toate posibilitatile de entertaiment existente, toate
+        aceste fiind disponibile intr-un mod cat mai interactiv.
+      </p>
+    </section>
+    </section>
+    <section id="operating">
+      <h2>Mediul de operare</h2>
+      <section id="supported">
+        <h3>Platforme suportate</h3>
+        <p>
+          Aplicatia COMMUTR va putea fi utilizata pe dispozitive mobile (Android/iOS), dar si pe dispozitive de
+          realitate virtuala ca AR/VR/MR Headsets.
+        </p>
+      </section>
+    </section>
+    <section id="designdecisions">
+      <!-- review? -->
+      <h2>Decizii de design</h2>
+        <p>
+          Pentru ca aplicatia sa fie cat mai interactiva si usor de utilizat, am optat pentru o interfata cat mai 
+          simpla pentru ca utilizatorului sa ii fie mai facil sa urmareasca continutul dorit, dar in acelasi timp
+          sa aiba la dispozitie cat mai multa varietate.
+        </p>
+        <p>
+          Aspectele principale ale interfetei aplicatiei COMMUTR sunt inspirate din interfetele aplicatiilor de streaming
+          cunoscute, indiferent de tipul acestora (video sau audio). 
+        </p>
+        <section id="mobiledecisions">
+            <h3>Decizii pentru dispozitive mobile</h3>
+            <p>
+                In pagina principala a aplicatiei se regasesc toate categoriile de divertisment disponibile din care 
+                utilizatorul poate alege. Astfel, toate optiunile se gasesc intr-un singur loc fara a mai fi nevoie de  
+                navigarea prin mai multe submeniuri si ferestre pentru a ajunge la categoria dorita.
+            </p>
+            <p>
+              Tot pentru usurinta in utilizare, in partea de jos a fiecarei ferestre exista un <code>Navigation Bar</code>
+              in care sunt butoanele de <code>Home</code>, <code>Favourites</code>, <code>Location</code> si <code>Profile</code>
+              pentru a oferi acces rapid la pagina principala, la sectiunea de favorite (in care se gasesc preferintele 
+              utilizatorului pentru fiecare categorie), la locatia curenta si la pagina de profil.
+            </p>
+            <p>
+              Fiecare categorie are o pagina dedicata ce este impartita in subcategorii pentru a simplifica alegerea
+              continutului in functie de interesul utilizatorului. Odata selectat continutul (joc, film, carte, podcast sau muzica), se va deschide o pagina 
+              dedicata pentru urmarirea sa in modul fullscreen.
+            </p>
+        </section>
+        <section id="vrdecisions">
+            <h3>Decizii pentru dispozitive AR/VR</h3>
+            <p>
+                Toate categoriile vor fi permanent afisate in partea de jos a "ecranului" sub forma de butoane, pentru a facilita schimbarea intre 
+                acestea si a nu fi nevoie de trecerea prin mai multe submeniuri pentru a ajunge la categoria dorita.
+            </p>
+            <p>
+              Pentru pagina fiecarei categorii va aparea in permanenta tot continutul specific acelei categorii (
+              in partea centrala este continutul selectat de catre utilizator, iar in partea dreapta sunt celelalte
+              optiuni disponibile). 
+            </p>
+            <p>
+              In functie de locatia in care se afla utilizatorul, in partea stanga a "ecranului" se va afla permanent
+              locatia acestuia alaturi de informatii aditionale legate de principalele obiective turistice de interes. 
+            </p>
+            <p>
+              Astfel experienta de utilizare devine una intuitiva in care tot continutul este foarte usor accesibil,
+              utilizatorul fiind informat totodata de locatia in care se afla indiferent de tipul de continut pe care il
+              consuma.
+            </p>
+        </section>
+    </section>
+    <section id="interaction-design-patterns">
+      <!-- review? -->
+      <h2>Interaction design patterns</h2>
+      <section id="navbar">
+        <h3>Bara de navigare</h3>
+        <p>
+          Pentru varianta de mobil, in partea de jos a ecranului exista o bara de navigare ce contine butoanele principale: <code>Home</code>, <code>Favourites</code>, <code>Location</code> si <code>Profile</code>
+          folosite pentru a accesa functionalitatile principale ale aplicatiei, ce nu fac parte din vreo categorie de 
+          continut.
+        </p>
+        <p>
+          Pentru varianta de AR/VR, bara de navigare este constituita din principalele categorii de continut (muzica, 
+          filme, podcasturi, carti, jocuri).
+        </p>
+      </section>
+      <section id="dashboard">
+        <h3>Dashboard</h3>
+        <p>
+          Pagina fiecarei categorii reprezinta un dashboard in care cele mai apreciate filme, piese, carti sau podcasturi
+          sunt afisate utilizatorului in functie de preferinte.
+        </p>
+        <p>
+          Pagina de Favourites prezinta o evidenta a favoritelor pentru fiecare categorie in parte sub forma de dashboard.
+        </p>
+        <p>
+          De asemenea, pagina de History prezinta un istoric al fiecarui continut vizionat per categorie.
+        </p>
+      </section>
+      <section id="tiles">
+        <h3>Tiles</h3>
+        <p>
+          Fiecare element din pagina individuala al fiecarui tip de continut apartine unui tile indiferent de subcategoria 
+          in care se afla. Astfel, interfata devenind mai intuitiva si mai placuta vizual.
+        </p>
+      </section>
+      <section id="tap">
+        <h3>Tap</h3>
+        <p>
+          Orice interactiune cu aplicatia se face printr-un simplu tap pentru a facilita o experienta mai placuta de 
+          utilizare si a nu confuza utilizatorii care nu au mai folosit astfel de aplicatii pana acum.
+        </p>
+      </section>
+      <section id="swipe-left">
+        <h3>Swipe-left</h3>
+        <p>
+          Pentru a naviga prin istoricul vizionarilor/ascultarilor utilizatorul va trebui sa dea swipe de la dreapta
+          la stanga, analog si pentru a vedea mai multe titluri din aceeasi subcategorie din pagina individuala a 
+          fiecarui tip de continut.
+        </p>
+      </section>
+      <section id="swipe-down">
+        <h3>Swipe-down</h3>
+        <p>
+          Atunci cand utilizatorul se afla in modul de citire a unei carti, pentru a continua lectura va trebui sa dea
+          swipe-down astfel incat paginile sa continue sa se desfasoare pe ecran.
+        </p>
+      </section>
+      <section id="form-patterns">
+        <h3>Form patterns</h3>
+        <section id="email">
+          <h4>Email</h4>
+          <p>Folosit pentru ca utilizatorul sa-si introduca adresa de email.</p>
+        </section>
+        <section id="textarea">
+          <h4>Textarea</h4>
+          <p>Folosit pentru ca utilizatorul sa-si introduca username-ul.</p>
+        </section>
+        <section id="image">
+          <h4>Image</h4>
+          <p>Folosit pentru ca utilizatorul sa-si uploadeze o poza de profil.</p>
+        </section>
+        <section id="password">
+          <h4>Password</h4>
+          <p>Folosit pentru ca utilizatorul sa-si introduca parola pentru contul sau.</p>
+        </section>
+      </section>
+    </section>
+    <section id="usermanual">
+      <!-- review? -->
+      <h2>Manual de utilizare</h2>
+        <section id="minreq">
+          <h4>Cerinte minime</h4>
+          <p>Android 8+, iOS 13+, AR/VR headset (Meta RayBan, Apple Vision Pro)</p>
+        </section>
+        <section id="connectivity">
+          <h4>Conectivitate</h4>
+          <p>Acces la internet de viteza medie</p>
+        </section>
+        <section id="navigation">
+          <h4>Utilizarea aplicatiei</h4>
+          Cele de mai jos se aplica atat pentru dispozitive mobile cat si AR/VR.
+          <section id="mainmenu">
+            <h4>Ecranul principal</h4>
+            <p>Pentru varianta de mobil, aici se regasesc toate tipurile de divertisment ale aplicatiei (muzica, filme, podcasturi, carti, jocuri).
+                La apasarea uneia dintre aceste optiuni se va deschide pagina dedicata fiecarei categorii.              
+            </p>
+            <p>
+              In partea de jos exista o bara de navigare care faciliteaza accesul la paginile care nu sunt prezentate pe larg
+              ca cele de mai sus (home, favourites, location, profile).
+            </p>
+            <p>
+              Pentru varianta de AR/VR, interfata se va deschide cu cea mai recent forma de continut vizionata, iar in 
+              partea de jos se vor regasi cele cinci categorii individuale. 
+            </p>
+          </section>
+          <section id="secondmenu">
+            <h4>Ecrane secundare</h4>
+            <p>
+              Ecranele care reprezinta cate o categorie individuala precum cele ca "Music", "Podcast", "Books" sunt separate
+              in urmatoarele subcategorii "Top", "Last", "More of what you like".
+            </p>
+            <p>
+              Ecranul pentru categoria "Movies" are subcategoriile: "Top movies", "Top series", "Continue watching".
+            </p>
+            <p>
+              Ecranul pentru categoria "Games" are subcategoriile: "Best rated games", "Trending", "Continue playing".
+            </p>
+            <p>
+              Fiecare din aceste ecrane secundare are o functie de cautare in care utilizatorul poate gasi cu usurinta 
+              titlul preferat.
+            </p>
+          </section>
+          <section id="indivualmenu">
+            <h4>Ecrane individuale</h4>
+            <p>
+              Dupa ce utilizatorul a selectat un titlu anume din unul din ecranele anterioare i se va deschide un
+              ecran separat in care va rula doar continutul selectat fara niciun alt element pe ecran.
+            </p>
+            <p>
+              Fiecare ecran indivual este adaptat tipului de continut pe care il reda si ofera toate functionalitatile
+              necesare acelui tip de continut. Spre exemplu, pentru vizionarea filmelor utilizatorul poate relua filmul
+              de unde a ramas sau sa deruleze la momentul dorit.
+            </p>
+          </section>
+          <section id="profilemenu">
+            <h4>Profilul utilizatorului</h4>
+            <p>
+              In acest ecran utilizatorul poate sa-si schimba numele de utilizator, emailul, poza de profil si 
+              parola. De asemenea, se poate deconecta pentru a se conecta cu un alt cont.
+            </p>
+          </section>
+          <section id="settingsmenu">
+            <h4>Setarile contului</h4>
+            <p>
+              Conectarea la contul Google pentru a nu mmai fie nevoie de crearea unui cont in cadrul aplicatiei.
+            </p>
+            <p>
+              Stergerea contului.
+            </p>
+            <p>
+              Autoplay, pentru redarea continutului in mod automat fara a mai fi nevoie ca utilizatorul sa-l 
+              porneasca manual.
+            </p>
+            <p>
+              Limba.
+            </p>
+            <p>
+              Calitatea vizionarii/ascultarii pe nivele de preferinta.
+            </p>
+            <p>
+              Raportarea problemelor.
+            </p>
+          </section>
+        </section>
+    </section>
+    <section id="references">
+      <h2>Referinte</h2>
+      <dt id="ref-HCI">HCI course website</dt><dd property="schema:citation" typeof="schema:WebPage" resource="http://citationstyles.org/">
+    <cite property="schema:name"><a href="http://pxdotpt.com/hci2025">HCI course</a></cite>.
+  </dd></dl>
+      <dt id="ref-CSL">Design patterns</dt><dd property="schema:citation" typeof="schema:WebPage" resource="http://citationstyles.org/">
+    <cite property="schema:name"><a href="https://ui-patterns.com/patterns">Design patterns</a></cite>.
+  </dd></dl>
+    </section>
+
+</body>
+</html>
